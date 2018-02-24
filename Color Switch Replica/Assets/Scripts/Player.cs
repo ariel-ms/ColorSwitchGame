@@ -30,6 +30,14 @@ public class Player : MonoBehaviour {
 
      public void OnTriggerEnter2D (Collider2D col)
     {
+
+        if (col.tag == "ColorChanger")
+        {
+            SetRandomColor();
+            Destroy(col.gameObject);
+            return;
+        }
+
         if (col.tag != currentColor)
             Debug.Log("Game Over");
     }
@@ -37,7 +45,7 @@ public class Player : MonoBehaviour {
     void SetRandomColor()
     {
         int index = Random.Range(0,4);
-        Debug.Log(index);
+        //Debug.Log(index);
 
         switch(index)
         {
