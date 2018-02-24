@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour {
     public float jumpForce = 10f;
@@ -39,7 +40,11 @@ public class Player : MonoBehaviour {
         }
 
         if (col.tag != currentColor)
+        {
             Debug.Log("Game Over");
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
+            
     }
 
     void SetRandomColor()
