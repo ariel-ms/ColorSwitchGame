@@ -30,12 +30,13 @@ public class Player : MonoBehaviour {
 
      public void OnTriggerEnter2D (Collider2D col)
     {
-        Debug.Log(col.tag);
+        if (col.tag != currentColor)
+            Debug.Log("Game Over");
     }
 
     void SetRandomColor()
     {
-        int index = Random.Range(0,3);
+        int index = Random.Range(0,4);
         Debug.Log(index);
 
         switch(index)
