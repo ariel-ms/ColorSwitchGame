@@ -28,15 +28,16 @@ public class Player : MonoBehaviour {
         }
     }
 
-    void OnTriggerEnter2D(Collider2D col)
+     public void OnTriggerEnter2D (Collider2D col)
     {
         Debug.Log(col.tag);
-        //if (col.tag == "")
     }
 
     void SetRandomColor()
     {
         int index = Random.Range(0,3);
+        Debug.Log(index);
+
         switch(index)
         {
             case 0:
